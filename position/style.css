@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.icon i {
+  font-size: 48px;
+  color: red;
+  transition: color 300ms ease-in-out;
+}
+
+.icon i:hover {
+  color: blue;
+}
+
+.position {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border: 3px solid darkblue;
+}
+
+.position div {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #000;
+  text-align: center;
+  line-height: 100px;
+}
+
+.position div:first-child {
+  background-color: red;
+  /* 별도로 지정하지 않으면 기본값이 static */
+  /* HTML문서상에서 원래 있어야 할 위치에 배치됨 */
+  /* HTML이 작성된 순서대로 배치 */
+  /* static 상태에서는 top,bottom,left,right
+  값을 줘도 적용이 되지 않는다 */
+  position: static;
+}
+
+.position div:nth-child(2) {
+  background-color: yellow;
+  /* 내 원래 위치를 기준으로 이동 */
+  /* position: relative;
+  top: 50px;
+  left: 50px; */
+
+  /* position: fixed;
+  top: 100px;
+  right: 30px; */
+
+  position: sticky;
+  top: 50px;
+}
+
+.position div:nth-child(3) {
+  background-color: greenyellow;
+  /* 태그중에 relative를 기준으로 움직임 */
+  /* absolute는 기준을 자신이 아닌 상위요소에서 찾음 */
+  /* 기준이 없다면 최상위에 있는 <body>가 배치 기준이 됨 */
+  /* position: absolute;
+  top: 20px;
+  left: 20px; */
+  /* 공중에 떠있는 속성들 중에 누가 맨 앞에오고 뒤에 올건지
+  정해주는 속성 : 숫자가 높을수록 앞으로 감 */
+}
+
+.cat-box {
+  height: 600px;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat {
+  width: 500px;
+  height: 500px;
+  background-image: url('./images/pic1.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.empty-box {
+  height: 1500px;
+}
+
